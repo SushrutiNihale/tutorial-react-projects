@@ -1,3 +1,8 @@
+Hi!
+This is me improving my React skills by following John Smilga's course on the YouTube channel freeCodeCamp.org (check it out here: https://youtu.be/a_7Z7C_JCyo)
+
+Everything below has been written by John Smilga as part of the course
+
 # React Projects
 
 #### React Course
