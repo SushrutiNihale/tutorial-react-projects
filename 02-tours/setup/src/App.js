@@ -27,6 +27,11 @@ function App() {
     fetchTours();
   }, []);
 
+  const removeTour = (id) => {
+    const updatedToursData = ToursData.filter((e) => e.id !== id);
+    setToursData(updatedToursData);
+  }
+
   if (LoadingState) {
     return (
       <main>
@@ -34,9 +39,24 @@ function App() {
       </main>
     );
   }
+
+  // if no tours are left
+  if (ToursData.length === 0) {
+    return (
+      <main>
+        <h2>No Tours Left</h2>
+        <button
+          onClick={fetchTours}
+          className='btn'>
+          Click to get tours
+        </button>
+      </main>
+    )
+  }
   return (
     <main>
-      <Tours tours={ToursData} />
+      {/* passing removeTour as a prop; this leads to prop drilling in our app */}
+      <Tours tours={ToursData} removeTour={removeTour} />
     </main>
   )
 }
