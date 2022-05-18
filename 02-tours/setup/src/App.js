@@ -55,7 +55,9 @@ function App() {
   }
   return (
     <main>
-      {/* passing removeTour as a prop; this leads to prop drilling in our app */}
+      {/* passing removeTour as a prop
+      removeTour is also passed from Tours to Tour
+      this leads to prop drilling in our app*/}
       <Tours tours={ToursData} removeTour={removeTour} />
     </main>
   )
